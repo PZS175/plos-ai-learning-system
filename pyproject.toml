@@ -83,7 +83,11 @@ warn_unused_configs = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q"
+# 测试统一使用 conftest 里会话级保活的 qapp（自管事件循环），不使用 pytest-qt 的 qtbot。
+# 但 pytest-qt 插件会自动挂载 pytest_runtest_teardown → processEvents，
+# 该钩子在部分 Qt/Python 组合下会因处理悬空事件而以原生 abort 结束进程（CI 上实测崩溃），
+# 因此显式关闭该插件，保证测试进程稳定。
+addopts = "-q -p no:qt"
 markers = [
     "ui: 涉及 Qt 界面的测试（离屏渲染）",
     "slow: 运行较慢的测试",
