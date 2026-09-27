@@ -1,0 +1,90 @@
+# ============================================================
+# PLOS AI 个人学习操作系统 · Git 忽略规则
+# 原则：源码与文档进仓库，运行数据 / 打包产物 / 模型文件一律不进
+# ============================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.installed.cfg
+MANIFEST
+
+# ---------- 虚拟环境 ----------
+venv/
+.venv/
+ai_env/
+env/
+ENV/
+pyvenv.cfg
+
+# ---------- 构建与打包产物（安装包体积 400MB+，放 Releases 而不是仓库）----------
+build/
+dist/
+installer/output/
+*.exe
+*.msi
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------- 运行期数据（用户隐私数据，绝不提交）----------
+data/
+logs/
+config/
+*.db
+*.db-shm
+*.db-wal
+*.plosbackup
+config.toml
+config.local.toml
+config/*.local.toml
+
+# ---------- 模型文件（体积过大，由使用者本地下载）----------
+models/
+.paddlex/
+*.gguf
+*.ggml
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.pdiparams
+*.bin
+
+# ---------- 测试与临时产物 ----------
+test_export_out/
+ft_*.pdf
+t.pdf
+*.log
+*.tmp
+*.bak
+*.cache
+tempCodeRunnerFile.py
+
+# ---------- IDE ----------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ---------- 环境变量 ----------
+.env
+.env.local
+.env.*.local
+
+# ---------- 系统文件 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db

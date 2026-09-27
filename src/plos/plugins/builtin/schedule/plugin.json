@@ -1,0 +1,7 @@
+{
+  "name": "课程表",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "按周一到周日、分节次编辑每周课程表，内容按账号自动保存。",
+  "entry": "main"
+}

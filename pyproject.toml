@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plos-ai"
+version = "2.3.1"
+description = "PLOS AI 个人学习操作系统 - 本地离线 AI 学习桌面应用"
+readme = "docs/prd.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Michael Piao" }
+]
+keywords = ["ai", "learning", "offline", "ocr", "rag", "flashcards"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Education",
+]
+dependencies = [
+    "PyQt6>=6.6.0",
+    "PyQt6-Qt6>=6.6.0",
+    "ollama>=0.1.0",
+    "openai>=1.0.0",
+    "httpx>=0.25.0",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "paddleocr>=2.7.0",
+    "paddlepaddle>=2.5.0",
+    "Pillow>=10.0.0",
+    "PyMuPDF>=1.23.0",
+    "python-docx>=0.8.11",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "opencv-python>=4.8.0",
+    "scikit-image>=0.21.0",
+    "psutil>=5.9.0",
+    "pydantic>=2.0.0",
+    "tenacity>=8.2.0",
+    "pyperclip>=1.8.0",
+    "tomli>=2.0.0",
+    "tomli-w>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-qt>=4.2.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "pyinstaller>=6.0.0",
+]
+
+[project.scripts]
+plos-ai = "plos.__main__:main"
+plos = "plos.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+plos = ["db/schema.sql"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "ui: 涉及 Qt 界面的测试（离屏渲染）",
+    "slow: 运行较慢的测试",
+]
+
+[tool.coverage.run]
+source = ["src/plos"]
+omit = ["*/tests/*", "*/__pycache__/*"]
+
+[tool.coverage.report]
+show_missing = true

@@ -1,0 +1,7 @@
+{
+  "name": "单位换算器",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "长度、重量、温度、面积、体积、时间六大类常用单位互算，输入即时出结果。",
+  "entry": "main"
+}

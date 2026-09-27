@@ -1,0 +1,7 @@
+{
+  "name": "成绩记录本",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "按科目记录每次考试得分与满分，自动计算加权平均、最高最低，按账号保存。",
+  "entry": "main"
+}

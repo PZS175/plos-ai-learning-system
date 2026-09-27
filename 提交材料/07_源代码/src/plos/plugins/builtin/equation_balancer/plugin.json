@@ -1,0 +1,7 @@
+{
+  "name": "化学方程式配平",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "输入化学方程式自动配平，支持括号与嵌套括号（如 Ca(OH)2、Fe2(SO4)3），给出最小整数系数并校验。",
+  "entry": "main"
+}

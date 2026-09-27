@@ -1,0 +1,7 @@
+{
+  "name": "公式手册",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "中学数学、物理、化学常用公式速查，支持关键词搜索与一键复制。",
+  "entry": "main"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "科学计算器",
+  "version": "1.0.0",
+  "author": "PLOS-AI",
+  "description": "支持函数、幂、括号与角度/弧度切换的科学计算器；表达式用白名单语法树解析，不使用 eval。",
+  "entry": "main"
+}
