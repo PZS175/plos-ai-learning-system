@@ -314,7 +314,6 @@ class TestLatexCleanExport:
 
     def test_export_contains_no_raw_latex(self, tmp_path: Path):
         """试卷导出边界：docx/pdf 文本不含反斜杠 LaTeX 记号。"""
-        import json as _json
 
         from plos.services import ExamService, UserService
 

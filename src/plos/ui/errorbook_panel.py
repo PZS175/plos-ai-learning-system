@@ -30,7 +30,6 @@ from PyQt6.QtWidgets import (
     QPushButton,
     QScrollArea,
     QSplitter,
-    QTextBrowser,
     QTextEdit,
     QVBoxLayout,
     QWidget,

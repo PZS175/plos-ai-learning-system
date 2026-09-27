@@ -21,7 +21,6 @@ from PyQt6.QtWidgets import (
     QPushButton,
     QScrollArea,
     QSpinBox,
-    QTextBrowser,
     QTreeWidget,
     QTreeWidgetItem,
     QVBoxLayout,

@@ -23,7 +23,7 @@ import uuid
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Sequence
+from typing import Callable, List, Optional, Sequence
 
 import cv2
 import numpy as np

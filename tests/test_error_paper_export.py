@@ -99,6 +99,7 @@ def _seed(errorbook: ErrorBookService) -> dict:
 def test_build_paper_sections_and_numbering(paper_env):
     """四类题型分块展示，题号跨题型连续；选择题选项被拆分。"""
     ids = _seed(paper_env["errorbook"])
+    assert len(ids) == 4  # 四类题型各一道
     errors = paper_env["service"].select_errors(scope="all")
 
     paper = paper_env["service"].build_paper(errors, {"knowledge_label": "全部错题"})
@@ -167,7 +168,7 @@ def test_knowledge_points_listed_for_filter(paper_env):
 def test_export_docx_layout(paper_env):
     """Word 试卷：标题、页眉、页脚页码域、题型分块、文末答案。"""
     docx = pytest.importorskip("docx")
-    ids = _seed(paper_env["errorbook"])
+    _seed(paper_env["errorbook"])
     service = paper_env["service"]
     errors = service.select_errors(scope="all")
 

@@ -29,6 +29,7 @@ from PyQt6.QtCore import (
     Qt,
     pyqtSignal,
 )
+from PyQt6.QtGui import QTextDocument
 from PyQt6.QtWidgets import (
     QGraphicsOpacityEffect,
     QLabel,
@@ -660,9 +661,7 @@ class MathItemDelegate(QStyledItemDelegate):
         self._cache: dict = {}
         self._cache_limit = 240
 
-    def _document(self, text: str, width: int, base_font) -> "QTextDocument":
-        from PyQt6.QtGui import QTextDocument
-
+    def _document(self, text: str, width: int, base_font) -> QTextDocument:
         dark = is_dark_theme()
         key = (hash(text), width, dark)
         cached = self._cache.get(key)

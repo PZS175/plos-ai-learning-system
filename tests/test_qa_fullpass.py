@@ -330,7 +330,6 @@ def test_question_import_xlsx_and_bad_file(qa_env, tmp_path: Path):
     from plos.services.question_import_service import QuestionImportService
 
     db, users = qa_env["db"], qa_env["users"]
-    errorbook = qa_env["errorbook"]
     svc = QuestionImportService(db=db, user_service=users)
     uid = users.get_current_user_id()
 
